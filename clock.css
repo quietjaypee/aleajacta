@@ -1,0 +1,19 @@
+.clock {
+	display: flex;
+	background-color: #d0d0d0;
+}
+
+.clock input {
+	background-color: black;
+	color: white;
+	margin: 10px;
+	padding: 20px;
+	font-size: 24px;
+}
+
+.progress {
+	background-color: white;
+	margin: 10px;
+	padding: 20px;
+	font-size: 24px;
+}

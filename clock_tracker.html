@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Geek et Distingués : ressources pour MJ</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="layout_base.css">
+    <link rel="stylesheet" href="clock.css">
+    <script src="clock.js"></script>
+    <script src="clock_v2.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Geek et Distingués : Clock Tracker</h1>
+      <p>Un outil pour générer et suivre les clocks (inspirés du système BiTD)</p>
+    </header>
+    <section>
+      <nav>
+        <ul>
+          <li><a href="#">Dice Roller</a></li>
+          <li><a href="#">Clock Tracker</a></li>
+          <li><a href="#">Genesys Tables</a></li>
+        </ul>
+      </nav>
+      <article>
+        <input type="text"></input><br/>
+        <fieldset>
+          <legend>Sélectionner le nombre de segments :</legend>
+          <button value="4" onclick="selSegments(this.value)">4</button> 
+          <button value="6" onclick="selSegments(this.value)">6</button> 
+          <button value="8" onclick="selSegments(this.value)">8</button> 
+          <button value="12" onclick="selSegments(this.value)">12</button> 
+        </fieldset>
+        <div class="clock" id="progressBar">
+          <button id="minusButton">-</button>
+          <button id="plusButton">+</button>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>
+
