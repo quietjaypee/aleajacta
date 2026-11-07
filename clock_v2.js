@@ -1,15 +1,23 @@
 // Deuxième version de l'horloge. Utiliser le concept d'objet pour représenter les clocks.
 
 const clocks = [
-	{titre: "Les enquêteurs sont en danger !", progression: 3, longueur: 6},
-	{titre: "Prout", progression: 2, longueur: 4},
+	{title: "Les enquêteurs sont en danger !", progression: 3, segments: 6},
+	{title: "Prout", progression: 2, segments: 4},
 ]
 
-function creerClock(ti, pr, lo) {
-	const nouvClock = {titre: ti, progression: pr, longueur: lo}
-	let ajoutHTML = "";
-	clocks.push(nouvClock)
-	for (let i = 0; i < longueur; i++) {
-		ajoutHTML += `<div class="progress"></div>`;	
+function showClock(clock) {
+	const clk = document.createElement("div")
+	clk.setAttribute("class", "clock")
+	const mb = document.createElement("button")
+	mb.setAttribute("class", "minusButton")
+	clk.append(mb)
+	for (let i = 0; i < clock.segments; i++ ) {
+		const seg = document.createElement("div") 
+		seg.setAttribute("class", "progress")
+		clk.append(seg)
 	}
-}
+	const pb = document.createElement("button")
+	pb.setAttribute("class", "plusButton")
+	clk.append(pb)
+	return clk
+}	
