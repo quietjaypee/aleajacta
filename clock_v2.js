@@ -12,9 +12,15 @@ function showClock(clock) {
 	mb.setAttribute("class", "minusButton")
 	clk.append(mb)
 	for (let i = 0; i < clock.segments; i++ ) {
-		const seg = document.createElement("div") 
-		seg.setAttribute("class", "progress")
-		clk.append(seg)
+		if (i < clock.progress) {
+			const seg = document.createElement("div") 
+			seg.setAttribute("class", "progress-full")
+			clk.append(seg)
+		} else {
+			const seg = document.createElement("div") 
+			seg.setAttribute("class", "progress-empty")
+			clk.append(seg)
+		}
 	}
 	const pb = document.createElement("button")
 	pb.setAttribute("class", "plusButton")
