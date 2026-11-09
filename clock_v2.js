@@ -8,44 +8,26 @@ const clocks = [
 function showClock(clock) {
 	const clk = document.createElement("div")
 	clk.setAttribute("class", "clock")
+	const txt = document.createElement("input")
+	txt.setAttribute("type", "text")
+	clk.append(txt)
 	const mb = document.createElement("button")
 	mb.setAttribute("class", "minusButton")
 	clk.append(mb)
-	for (let i = 0; i < clock.segments; i++ ) {
-		if (i < clock.progress) {
-			const seg = document.createElement("div") 
-			seg.setAttribute("class", "progress-full")
-			clk.append(seg)
-		} else {
-			const seg = document.createElement("div") 
-			seg.setAttribute("class", "progress-empty")
-			clk.append(seg)
-		}
-	}
 	const pb = document.createElement("button")
 	pb.setAttribute("class", "plusButton")
 	clk.append(pb)
+	const pr = document.createElement("progress")
+	pr.setAttribute("value", clock.progress)
+	pr.setAttribute("max", clock.segments)
 	return clk
 }
 
-function clockIncrease(clock) {
-	if (clock.progression < clock.segments) {
-		clock.progression++
-		console.log(clock.progression)
-		for (let i = 0; i < clock.progression; i++) {
-			segments[i].style.backgroundColor= "rgb(255, 0, 0)"
-		}
-	}
+function progIncrease(clock) {
+	if (clock.progress < clock.segments) clock.progress++
 }
 
-function clockDecrease(clock) {
-	if (clock.progression != 0) {
-		clock.progression--
-		console.log(clock.progression)
-		for (let i = clock.segments - 1; i > clock.progression-1; i-- ) {
-			segments[i].style.backgroundColor= "rgb(255, 0, 0)"
-		}
-	}
+function progDecrease(clock) {
+	if (clock.progress != 0) clock.progress--
 }
 
-	

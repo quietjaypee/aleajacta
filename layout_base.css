@@ -8,39 +8,41 @@ body {
 
 /* Style the header */
 header {
-  background-color: #666;
+  background-color: #39393a;
   padding: 30px;
   text-align: center;
   font-size: 35px;
-  color: white;
+  color: #e6e6e6;
 }
 
-/* Create two columns/boxes that floats next to each other */
+/* Top navigation */
 nav {
+  background-color: #39393a;
+  overflow: hidden;
+}
+
+/* Style the links inside the menu */
+nav a {
   float: left;
-  width: 30%;
-  background: #ccc;
-  padding: 20px;
+  color: #e6e6e6;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
+nav a:hover {
+  background-color: #297373;
 }
 
-article {
-  float: left;
-  padding: 20px;
-  width: 70%;
-  background-color: #f1f1f1;
+
+nav a.active{
+  background-color: #297373;
 }
 
-/* Clear floats after the columns */
-section::after {
-  content: "";
-  display: table;
-  clear: both;
+main {
+  padding: 10px 10px
 }
 
 /* Style the footer */
@@ -51,10 +53,3 @@ footer {
   color: white;
 }
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  }
-}
